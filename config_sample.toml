@@ -1,0 +1,6 @@
+# toml config file
+[development.database]
+connection_string = "postgres://****connection_string"
+
+[development.cookie]
+secret="somecookiesecretuidlikestring"
