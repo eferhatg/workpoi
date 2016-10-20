@@ -9,7 +9,7 @@ func TestNew(t *testing.T) {
 
 	c := viper.New()
 	c.SetConfigName("config")
-	c.AddConfigPath("../.")
+	c.AddConfigPath("../")
 	c.SetConfigType("toml")
 	err := c.ReadInConfig()
 	if err != nil {

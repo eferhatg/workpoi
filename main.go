@@ -39,7 +39,7 @@ func main() {
 	 	log.Fatal(err)
 	 }
 
-	app.TestApplication()
+	app.Start()
 
 	// Person{FirstName:"Jason", LastName:"Moiron", Email:"jmoiron@jmoiron.net"}
 
