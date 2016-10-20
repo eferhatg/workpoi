@@ -47,7 +47,7 @@ func (app *Application) Start() {
 
 	router := gin.Default()
 	router.Use(app.appMiddleware())
-
+	router.LoadHTMLGlob("templates/*")
 	router.GET("/", handlers.GetHome)
 
 	port := app.config.GetString(app.config.GetString("env") + ".env.port")
@@ -61,7 +61,10 @@ func (app *Application) Start() {
 
 func (app *Application) appMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Set("app", app)
+		c.Set("db", app.db)
+		c.Set("session", app.sessionStore)
+		c.Set("config", app.config)
+
 		c.Next()
 	}
 }
