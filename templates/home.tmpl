@@ -2,14 +2,44 @@
 <html>
 <head>
 	<meta charset=utf-8 />
-	<title></title>
-	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<title></title>	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body>
- 	test değil la şaka yaptım {{ .Name }}
+<ul>
+	{{range .}}
+  		<li> 	 		{{ .ID }}<br/>
+ 		{{ .Name }}<br/>
+ 		{{ .Address }}<br/>
+	 		{{ .No }}<br/>
+ 		{{ .Tel }}<br/>
+ 		{{ .Lat }}<br/>
+
+ 		 		{{ .Long }}<br/>
+ 		{{ .City }}<br/>
+ 		{{ .Town }}<br/>
+	 		{{ .HasOwnWifi }}<br/>
+ 		{{ .HasWiSpotter }}<br/>
+ 		{{ .HasTtnetWifi }}<br/>
+
+ 			 		{{ .WifiRating }}<br/>
+ 		{{ .WifiAvgSpeed }}<br/>
+ 		{{ .PlugRating }}<br/>
+	 		{{ .NoiseRating }}<br/>
+ 		{{ .SeatCapacity }}<br/>
+ 		{{ .TableCapacity }}<br/></li>
+	{{end}}
+
+</ul>
+ 	<ul>
+
+
+
+ 	</ul>
+
+ 	
 </body>
 </html>

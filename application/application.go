@@ -9,11 +9,9 @@ import (
 	"github.com/spf13/viper"
 	"os"
 
+	//"errors"
 	"github.com/eferhatg/workpoi/handlers"
-	// "net/http"
-
-	// "$GO_BOOTSTRAP_REPO_NAME/$GO_BOOTSTRAP_REPO_USER/$GO_BOOTSTRAP_PROJECT_NAME/handlers"
-	// "$GO_BOOTSTRAP_REPO_NAME/$GO_BOOTSTRAP_REPO_USER/$GO_BOOTSTRAP_PROJECT_NAME/middlewares"
+	"net/http"
 )
 
 type Application struct {
@@ -42,17 +40,21 @@ func New(config *viper.Viper) (*Application, error) {
 	return app, err
 }
 
-
 func (app *Application) Start() {
 
 	router := gin.Default()
 	router.Use(app.appMiddleware())
+	router.Use(app.errorHandling())
 	router.LoadHTMLGlob("templates/*")
 	router.GET("/", handlers.GetHome)
 
 	port := app.config.GetString(app.config.GetString("env") + ".env.port")
-	os.Setenv("PORT",port)
+	os.Setenv("PORT", port)
 
+	// router.NoRoute(func(c *gin.Context) {
+	// 	c.Error(errors.New("Route not found"))
+	// 	//c.HTML(http.StatusNotFound, "error.tmpl",nil)
+	// })
 
 	log.Printf("Application Starting on %s", os.Getenv("PORT"))
 	router.Run()
@@ -69,4 +71,12 @@ func (app *Application) appMiddleware() gin.HandlerFunc {
 	}
 }
 
+func (app *Application) errorHandling() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Next()
 
+		if len(c.Errors.Errors()) > 0 {
+			c.HTML(http.StatusInternalServerError, "error.tmpl", nil)
+		}
+	}
+}

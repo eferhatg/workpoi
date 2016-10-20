@@ -1,17 +1,13 @@
 package main
 
 import (
-	
-	//"database/sql"
 	log "github.com/Sirupsen/logrus"
-
 	"github.com/eferhatg/workpoi/application"
 	"github.com/spf13/viper"
-	//"log"
 )
 
 func newConfig() (*viper.Viper, error) {
-	
+
 	c := viper.New()
 	c.SetConfigName("config")
 	c.AddConfigPath(".")
@@ -19,12 +15,11 @@ func newConfig() (*viper.Viper, error) {
 	err := c.ReadInConfig()
 	if err != nil {
 		log.Println("Config file not found...")
-		
+
 	}
 
 	return c, nil
 }
-
 
 func main() {
 
@@ -34,16 +29,11 @@ func main() {
 	}
 
 	log.Println(config.GetString("env"))
-	 app, err := application.New(config)
-	 if err != nil {
-	 	log.Fatal(err)
-	 }
+	app, err := application.New(config)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	app.Start()
 
 }
-
-
-
-
-

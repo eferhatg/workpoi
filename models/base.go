@@ -13,4 +13,3 @@ type Base struct {
 	table string
 	hasID bool
 }
-
