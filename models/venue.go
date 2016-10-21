@@ -25,12 +25,13 @@ type VenueRow struct {
 	NoiseRating   int     `db:"noise_rating"`
 	SeatCapacity  int     `db:"seat_capacity"`
 	TableCapacity int     `db:"table_capacity"`
+	CoverImage    string  `db:"cover_image"`
 }
 
-func (venue *Venue) Select(limit int,page int) ([]VenueRow, error) {
+func (venue *Venue) Select(limit int, page int) ([]VenueRow, error) {
 
 	v := []VenueRow{}
-	err := venue.db.Select(&v, "SELECT * FROM venue limit $1",limit)
+	err := venue.db.Select(&v, "SELECT * FROM venue limit $1", limit)
 	if err != nil {
 		log.Println(err)
 		return nil, err

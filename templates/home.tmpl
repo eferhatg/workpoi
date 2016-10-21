@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8 />
-	<title></title>	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-<body>
-<ul>
+{{ define "head"}}<title>IBu sayfa başka sayfa</title>{{ end }}
+
+{{ define "content" }}
+
+ <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                <div id="typed-strings">
+				    <p>sunum hazırlayın.</p>
+				    <p>internete girin.</p>
+				    <p>toplantı yapın.</p>
+				    <p>rapor oluşturun.</p>
+				    <p>ders çalışın.</p>
+				    <p>üretin.</p>
+				    <p>geliştirin.</p>
+				</div>
+				
+                    <h1>Dilediğiniz yerden <span id="typed"></span></h1>
+                    
+                    <span class="subheading">Biz de doğru yeri bulmanıza yardımcı olalım.</span>
+                </div>
+            </div>
+        </div>
+    </div>	
+</header>
+ <ul>
 	{{range .}}
   		<li> 	 		{{ .ID }}<br/>
  		{{ .Name }}<br/>
@@ -34,12 +50,17 @@
 	{{end}}
 
 </ul>
- 	<ul>
+{{ end }}
 
-
-
- 	</ul>
-
- 	
-</body>
-</html>
+{{ define "script" }}
+ <script src="js/typed.min.js"></script>
+ <script>
+    $(function(){
+        $("#typed").typed({
+        	loop: true,
+        	 typeSpeed: 100,
+            stringsElement: $('#typed-strings')
+        });
+    });
+</script>
+{{ end }}

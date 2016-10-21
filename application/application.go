@@ -11,6 +11,7 @@ import (
 
 	//"errors"
 	"github.com/eferhatg/workpoi/handlers"
+	"github.com/gin-gonic/contrib/renders/multitemplate"
 	"net/http"
 )
 
@@ -45,7 +46,11 @@ func (app *Application) Start() {
 	router := gin.Default()
 	router.Use(app.appMiddleware())
 	router.Use(app.errorHandling())
-	router.LoadHTMLGlob("templates/*")
+	//	router.LoadHTMLGlob("templates/*")
+	router.Static("/css", "./public/css")
+	router.Static("/img", "./public/img")
+	router.Static("/js", "./public/js")
+	router.HTMLRender = createTemplateRender()
 	router.GET("/", handlers.GetHome)
 
 	port := app.config.GetString(app.config.GetString("env") + ".env.port")
@@ -59,6 +64,12 @@ func (app *Application) Start() {
 	log.Printf("Application Starting on %s", os.Getenv("PORT"))
 	router.Run()
 
+}
+
+func createTemplateRender() multitemplate.Render {
+	r := multitemplate.New()
+	r.AddFromFiles("index", "./templates/base.tmpl", "./templates/home.tmpl")
+	return r
 }
 
 func (app *Application) appMiddleware() gin.HandlerFunc {
