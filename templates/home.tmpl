@@ -1,66 +1,95 @@
-{{ define "head"}}<title>IBu sayfa başka sayfa</title>{{ end }}
+<!DOCTYPE html>
+<html lang="en">
 
-{{ define "content" }}
+<head>
+    {{ template "head" . }}
+  <title>IBu sayfa başka sayfa</title>
+</head>
 
- <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                <div id="typed-strings">
-				    <p>sunum hazırlayın.</p>
-				    <p>internete girin.</p>
-				    <p>toplantı yapın.</p>
-				    <p>rapor oluşturun.</p>
-				    <p>ders çalışın.</p>
-				    <p>üretin.</p>
-				    <p>geliştirin.</p>
-				</div>
-				
-                    <h1>Dilediğiniz yerden <span id="typed"></span></h1>
+<body>
+
+
+    {{ template "navbar" . }}
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                    <div id="typed-strings">
+                        <p>sunum hazırlayın.</p>
+                        <p>kitap okuyun.</p>
+                        <p>internete girin.</p>
+                        <p>toplantı yapın.</p>
+                        <p>rapor oluşturun.</p>
+                        <p>ders çalışın.</p>                        
+                        <p>geliştirin.</p>
+                    </div>
                     
-                    <span class="subheading">Biz de doğru yeri bulmanıza yardımcı olalım.</span>
+                        <h1>Dilediğiniz yerden <span id="typed"></span></h1>
+                        
+                        <span class="subheading">Biz de doğru yeri bulmanıza yardımcı olalım.</span>
+                    </div>
                 </div>
             </div>
+        </div>  
+    </header>
+   <div class="container">
+        <div class="row">
+
+        {{range .Popregions}}
+        <div class="col-xs-6 col-sm-4 col-md-4">
+           <div class="thumbnail-region text-center">
+           <img src="{{ .CoverImage }}" class="img-responsive"></div>
+      
+        <div class="caption-region">
+            <p class="caption-town">{{ .Name }}</p>
+            <p class="caption-city">{{ .CityName }}</p>
         </div>
-    </div>	
-</header>
- <ul>
-	{{range .}}
-  		<li> 	 		{{ .ID }}<br/>
- 		{{ .Name }}<br/>
- 		{{ .Address }}<br/>
-	 		{{ .No }}<br/>
- 		{{ .Tel }}<br/>
- 		{{ .Lat }}<br/>
+    </div>
+        
+        {{ end }}
+      
 
- 		 		{{ .Long }}<br/>
- 		{{ .City }}<br/>
- 		{{ .Town }}<br/>
-	 		{{ .HasOwnWifi }}<br/>
- 		{{ .HasWiSpotter }}<br/>
- 		{{ .HasTtnetWifi }}<br/>
 
- 			 		{{ .WifiRating }}<br/>
- 		{{ .WifiAvgSpeed }}<br/>
- 		{{ .PlugRating }}<br/>
-	 		{{ .NoiseRating }}<br/>
- 		{{ .SeatCapacity }}<br/>
- 		{{ .TableCapacity }}<br/></li>
-	{{end}}
+ 
 
-</ul>
-{{ end }}
+</div>
+<!--     <ul>
+    {{range .Popvenues}}
+        <li>            {{ .ID }}<br/>
+        {{ .Name }}<br/>
+        {{ .Address }}<br/>
+            {{ .No }}<br/>
+        {{ .Tel }}<br/>
+        {{ .Lat }}<br/>
 
-{{ define "script" }}
- <script src="js/typed.min.js"></script>
- <script>
+                {{ .Long }}<br/>
+        {{ .City }}<br/>
+        {{ .Town }}<br/>
+            {{ .HasOwnWifi }}<br/>
+        {{ .HasWiSpotter }}<br/>
+        {{ .HasTtnetWifi }}<br/>
+
+                    {{ .WifiRating }}<br/>
+        {{ .WifiAvgSpeed }}<br/>
+        {{ .PlugRating }}<br/>
+            {{ .NoiseRating }}<br/>
+        {{ .SeatCapacity }}<br/>
+        {{ .TableCapacity }}<br/></li>
+    {{end}}
+
+</ul> -->
+</div></div>
+    {{ template "foot" . }}    
+    <script src="js/typed.min.js"></script>
+    <script>
     $(function(){
         $("#typed").typed({
-        	loop: true,
-        	 typeSpeed: 100,
+            loop: true,
+             typeSpeed: 100,
             stringsElement: $('#typed-strings')
         });
     });
-</script>
-{{ end }}
+    </script>
+</body>
+

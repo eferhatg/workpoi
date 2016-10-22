@@ -1,9 +1,9 @@
-/*!
+/*/*!
  * Start Bootstrap - Clean Blog v3.3.7+1 (http://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-body {
+/*body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
   color: #333333;
@@ -45,6 +45,7 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
+*/
 .navbar-custom {
   position: absolute;
   top: 0;
@@ -95,7 +96,7 @@ hr.small {
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
-    /* Force Hardware Acceleration in WebKit */
+
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -105,7 +106,6 @@ hr.small {
     backface-visibility: hidden;
   }
   .navbar-custom.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -61px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -129,7 +129,6 @@ hr.small {
     color: #0085A1;
   }
   .navbar-custom.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
     -webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -215,6 +214,7 @@ hr.small {
     font-size: 30px;
   }
 }
+/*
 .post-preview > a {
   color: #333333;
 }
@@ -397,4 +397,35 @@ img::-moz-selection {
 }
 body {
   -webkit-tap-highlight-color: #0085A1;
+}*/*/
+
+.thumbnail-region {
+    position: relative;
+    margin: 10px;
+}
+
+.caption-region {
+    position: absolute;
+    bottom: 10%;
+
+    right: 0;
+    
+      font-size: 24px;
+
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 30px 0 0;
+  color:white;
+
+}
+.caption-town {
+
+  margin: 0px;
+  font-weight: 800;
+  margin-bottom: -15px;
+}
+.caption-city {
+  margin: 0px;
+  float: right;
 }
