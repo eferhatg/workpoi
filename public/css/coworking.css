@@ -267,7 +267,7 @@ hr.small {
   display: block;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-}
+}*/
 footer {
   padding: 50px 0 65px;
 }
@@ -280,6 +280,7 @@ footer .copyright {
   text-align: center;
   margin-bottom: 0;
 }
+/*
 .floating-label-form-group {
   font-size: 14px;
   position: relative;
@@ -397,7 +398,7 @@ img::-moz-selection {
 }
 body {
   -webkit-tap-highlight-color: #0085A1;
-}*/*/
+}*/
 
 .thumbnail-region {
     position: relative;

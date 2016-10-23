@@ -52,7 +52,7 @@ func (app *Application) Start() {
 	router.Static("/img", "./public/img")
 	router.Static("/js", "./public/js")
 	router.Static("/media", "./public/media")
-	//router.HTMLRender = createTemplateRender()
+	
 	router.GET("/", handlers.GetHome)
 
 	port := app.config.GetString(app.config.GetString("env") + ".env.port")
