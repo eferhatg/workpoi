@@ -26,15 +26,8 @@ func GetHome(c *gin.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	r:= models.NewRegion(db)
-	rr,err:=r.Select(8,1)
-
-	if err != nil {
-		log.Fatal(err)
-	}
 	
-	s := homeargs{Popregions: rr, Popvenues: vr, ImgRoot:cnf.GetString("image.root") }
+	s := homeargs{ Popvenues: vr, ImgRoot:cnf.GetString("image.root") }
 
 	c.HTML(http.StatusOK, "home.tmpl", s)
 

@@ -45,7 +45,7 @@
 
         <div class="row">
 
-        {{range .Popregions}}
+        {{range .Popvenues}}
         <div class="col-xs-6 col-sm-3 col-md-3 ">
         <a href="#" >
            <div class="thumbnail-region text-center">
@@ -53,7 +53,7 @@
       
         <div class="caption-region">
             <p class="caption-town">{{ .Name }}</p>
-            <p class="caption-city">{{ .CityName }}</p>
+            <p class="caption-city">{{ .Address }}</p>
         </div>
         </a>
     </div>
@@ -65,31 +65,7 @@
  
 
 </div>
-<!--     <ul>
-    {{range .Popvenues}}
-        <li>            {{ .ID }}<br/>
-        {{ .Name }}<br/>
-        {{ .Address }}<br/>
-            {{ .No }}<br/>
-        {{ .Tel }}<br/>
-        {{ .Lat }}<br/>
 
-                {{ .Long }}<br/>
-        {{ .City }}<br/>
-        {{ .Town }}<br/>
-            {{ .HasOwnWifi }}<br/>
-        {{ .HasWiSpotter }}<br/>
-        {{ .HasTtnetWifi }}<br/>
-
-                    {{ .WifiRating }}<br/>
-        {{ .WifiAvgSpeed }}<br/>
-        {{ .PlugRating }}<br/>
-            {{ .NoiseRating }}<br/>
-        {{ .SeatCapacity }}<br/>
-        {{ .TableCapacity }}<br/></li>
-    {{end}}
-
-</ul> -->
 </div></div>
     {{ template "foot" . }}    
     <script src="js/typed.min.js"></script>
