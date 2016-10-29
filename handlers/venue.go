@@ -9,14 +9,14 @@ import (
 	"net/http"
 )
 
-type homeargs struct {
-    Popregions []models.RegionRow
+type venueargs struct {
+
     Popvenues []models.VenueRow
     ImgRoot string
 }
 
 
-func GetHome(c *gin.Context) {
+func GetVenues(c *gin.Context) {
 
 	db := c.MustGet("db").(*sqlx.DB)
 	cnf := c.MustGet("config").(*viper.Viper)
@@ -29,6 +29,6 @@ func GetHome(c *gin.Context) {
 	
 	s := homeargs{ Popvenues: vr, ImgRoot:cnf.GetString("image.root") }
 
-	c.HTML(http.StatusOK, "home.tmpl", s)
+	c.HTML(http.StatusOK, "venue.tmpl", s)
 
 }

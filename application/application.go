@@ -54,6 +54,7 @@ func (app *Application) Start() {
 	router.Static("/media", "./public/media")
 	
 	router.GET("/", handlers.GetHome)
+	router.GET("/calisilacak-mekanlar", handlers.GetVenues)
 
 	port := app.config.GetString(app.config.GetString("env") + ".env.port")
 	os.Setenv("PORT", port)
