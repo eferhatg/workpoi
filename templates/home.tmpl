@@ -3,104 +3,218 @@
 
 <head>
     {{ template "head" . }}
-  <title>IBu sayfa başka sayfa</title>
+  <title>Coworking</title>
 </head>
 
-<body>
+<body class="gl-restaurant-template">
 
+<!--================================
+            PAGE LOADER
+=================================-->
+<div id="gl-circle-loader-wrapper gl-home-template">
+  <div id="gl-circle-loader-center">
+    <div class="gl-circle-load">
+      <img src="images/ploading.gif" alt="Page Loader">
+    </div>
+  </div>
+</div>
 
-    {{ template "navbar" . }}
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                    <div id="typed-strings">
-                        <p>sunum hazırlayın.</p>
-                        <p>kitap okuyun.</p>
-                        <p>internete girin.</p>
-                        <p>toplantı yapın.</p>
-                        <p>rapor oluşturun.</p>
-                        <p>ders çalışın.</p>                        
-                        <p>geliştirin.</p>
-                    </div>
-                    
-                        <h1>Dilediğiniz yerden <span id="typed"></span></h1>
-                        
-                        <span class="subheading">Biz de doğru yeri bulmanıza yardımcı olalım.</span>
-                    </div>
+<!--================================
+            SIDE MENU
+=================================-->
+<!-- PAGE OVERLAY WHEN MENU ACTIVE -->
+<div class="gl-side-menu-overlay"></div>
+<!-- PAGE OVERLAY WHEN MENU ACTIVE END -->
+
+<div class="gl-side-menu-wrap">
+    <div class="gl-side-menu">
+        <div class="gl-side-menu-widget-wrap">
+            <div class="gl-login-form-wrapper">
+                <h3>User Login</h3>
+                <p>Login to add new listing </p>
+
+                <div class="gl-login-form">
+                    <form action="#">
+                        <input type="text" name="gl-user-name" id="gl-user-input" placeholder="User Name">
+                        <input type="password" name="gl-user-password" id="gl-user-password" placeholder="Password">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <div class="gl-social-login-opt">
+                    <a href="#" class="gl-social-login-btn gl-facebook-login">Login with Facebook</a>
+                    <a href="#" class="gl-social-login-btn gl-twitter-login">Login with Twitter</a>
+                </div>
+
+                <div class="gl-other-options">
+                    <a href="#" class="gl-forgot-pass">Forget Password ?</a>
+                    <a href="#" class="gl-signup">Sign up</a>
                 </div>
             </div>
-        </div>  
-    </header>
-   <div class="container">
-   <div class="row">
-
-     
-        <div class="col-md-8 col-md-offset-2 ">
-        <p class="intro">Wifi hızı, priz sıklığı, kahve lezzeti, gürültü seviyesi... Ajanlarımızın güvenilirliği ile işine en uygun mekanı bul.  </p></span>
-      
-
-</div></div>
-
-        <div class="row">
-
-        {{range .Popregions}}
-        <div class="col-xs-6 col-sm-3 col-md-3 ">
-        <a href="#" >
-           <div class="thumbnail-region text-center">
-           <img src="{{ .CoverImage }}" class="img-responsive"></div>
-      
-        <div class="caption-region">
-            <p class="caption-town">{{ .Name }}</p>
-            <p class="caption-city">{{ .CityName }}</p>
         </div>
-        </a>
     </div>
-        
-        {{ end }}
-      
 
-
- 
-
+    <button class="gl-side-menu-close-button" id="gl-side-menu-close-button">Close Menu</button>
 </div>
-<!--     <ul>
-    {{range .Popvenues}}
-        <li>            {{ .ID }}<br/>
-        {{ .Name }}<br/>
-        {{ .Address }}<br/>
-            {{ .No }}<br/>
-        {{ .Tel }}<br/>
-        {{ .Lat }}<br/>
+<!-- SIDE MENU END -->
 
-                {{ .Long }}<br/>
-        {{ .City }}<br/>
-        {{ .Town }}<br/>
-            {{ .HasOwnWifi }}<br/>
-        {{ .HasWiSpotter }}<br/>
-        {{ .HasTtnetWifi }}<br/>
+<!-- HEADER -->
+<header class="gl-header">
+  <!-- BOTTOM BAR/NAVIGATION -->
+  <div class="gl-header-bottombar">
+    <!-- Navigation Menu start-->
+    <nav class="navbar gl-header-main-menu" role="navigation">
+      <div class="container-fluid">
 
-                    {{ .WifiRating }}<br/>
-        {{ .WifiAvgSpeed }}<br/>
-        {{ .PlugRating }}<br/>
-            {{ .NoiseRating }}<br/>
-        {{ .SeatCapacity }}<br/>
-        {{ .TableCapacity }}<br/></li>
-    {{end}}
+        <!-- Navbar Toggle -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-</ul> -->
-</div></div>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo-header.png" alt="GLIMPSE"></a>
+        </div>
+        <!-- Navbar Toggle End -->     
+
+        <div class="gl-extra-btns-wrapper">
+          <button class="gl-add-post-btn">+ Mekan Ekle</button>
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navigation Menu end-->
+  </div>
+  <!-- END -->
+</header>
+<!-- HEADER END -->
+
+<!-- HERO IMAGE -->
+<section class="gl-hero-img-wrapper">
+  <div class="container">
+    <div class="row">
+      <h2 class="gl-hero-text-heading">Dilediğin yerden <span class="gl-color-text">çalış</span></h2>
+      <p class="gl-hero-text-paragraph">Biz doğru mekanı bulmanıza yardımcı olalım. </p>
+
+      <!-- DIRECTORY FORM -->
+      <div class="gl-directory-searchbar gl-bz-directory-searchbar">
+        <form action="#" id="gl-bz-directory-form">
+          <fieldset>    
+            <input type="text" name="gl-search-location" id="gl-search-location" class="gl-directory-input" placeholder="Bugün nerede çalışacaksın?">
+            <div class="gl-restaurant-category gl-category-dropdown">
+              <select class="gl-category-dropdown-selection">
+                <option></option>
+                <option value="Corp">İnternet</option>
+                <option value="Pub">Priz</option>
+                <option value="Int">Lezzet</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Ara</button>
+        </form>
+      </div>
+      <!-- END -->
+
+      <div class="gl-scroll-down-wrapper">
+        <a href="#gl-next-section" class="gl-scroll-down"><i class="ion-chevron-down"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- HERO IMAGE END -->
+
+
+<!-- FEATURED LISTINGS -->
+<section class="gl-feat-listing-section gl-section-wrapper">
+  <div class="container">
+    <div class="row">
+      <!-- SECTION HEADINGS -->
+      <div class="gl-section-headings">
+        <h1>Wifi hızı, priz sıklığı, kahve lezzeti, gürültü seviyesi...</h1>
+        <p>Ajanlarımızın güvenilirliği ile işine en uygun mekanı bul.</p>
+      </div>
+      <!-- END -->
+
+      <!-- WRAPPER -->
+      <div class="gl-featured-listing-wrapper">
+
+        {{range .Popvenues}}
+        <!-- FEATURED ITEMS -->
+        <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
+          <div class="gl-feat-items-img-wrapper">
+            <picture>
+                <source media="(min-width: 768px)" srcset=images/featured-listing-1.jpg>
+                <img alt="Category Image" srcset=images/featured-listing-1-xs.jpg>
+            </picture>
+
+            <span class="gl-item-rating">
+              <i class="fa fa-star"></i>
+              4.5
+            </span>
+          </div>
+
+          <div class="gl-feat-item-details">
+            <h3>
+              <a href="#">{{ .Name }}</a>
+            </h3>
+            <div class="gl-item-location">
+              <i class="ion-ios-location-outline"></i>
+              <span>{{ .Address }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- END -->
+
+          {{ end }}
+
+      
+      </div>
+      <!-- END -->
+
+      <!-- MORE BTN -->
+      <div class="gl-more-btn-wrapper">
+        <a href="#" class="gl-more-btn gl-btn">More</a>
+      </div>
+      <!-- END -->
+    </div>
+  </div>
+</section>
+<!-- FEATURED LISTINGS END -->
+
+
+<!-- CTA -->
+<section class="gl-cta-section">
+  <div class="container">
+    <div class="row">
+      <div class="gl-cta-content-wrapper">
+        <p>Stay connected &amp; book the best table</p>
+
+        <form action="#" class="gl-newsletter-form">
+          <input type="email" name="gl-newsletter-email" id="gl-newsletter-email" placeholder="Email">
+
+          <div class="gl-restaurant-location gl-location-dropdown">
+            <select class="gl-location-selection">
+              <option></option>
+              <option value="canada">Canada</option>
+              <option value="itally">Itally</option>
+              <option value="london">London</option>
+            </select>
+          </div>
+
+          <input type="submit" value="Submit" class="gl-btn">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA END -->
+
+
     {{ template "foot" . }}    
-    <script src="js/typed.min.js"></script>
-    <script>
-    $(function(){
-        $("#typed").typed({
-            loop: true,
-             typeSpeed: 100,
-            stringsElement: $('#typed-strings')
-        });
-    });
-    </script>
+   
 </body>
+</html>
 

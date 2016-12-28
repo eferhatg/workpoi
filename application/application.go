@@ -52,6 +52,8 @@ func (app *Application) Start() {
 	router.Static("/img", "./public/img")
 	router.Static("/js", "./public/js")
 	router.Static("/media", "./public/media")
+	router.Static("/images", "./public/images")
+	router.Static("/fonts", "./public/fonts")
 	
 	router.GET("/", handlers.GetHome)
 	router.GET("/calisilacak-mekanlar", handlers.GetVenues)

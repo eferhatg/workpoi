@@ -1,41 +1,122 @@
 {{ define "foot" }}
 <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-                </div>
-            </div>
+  <!-- FOOTER TOP -->
+  <div class="gl-footer-top-wrapper">
+    <div class="container">
+      <div class="row">
+        <!-- FOOTER WIDGET -->
+        <div class="gl-footer-widget gl-footer-logo gl-footer-fixed-widget">
+          <a href="#">
+            <img src="images/logo-footer.png" alt="Glimpse">
+          </a>
         </div>
-    </footer>
+        <!-- END -->
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- FOOTER WIDGET -->
+        <div class="gl-footer-widget gl-contact-info">
+          <h3 class="gl-footer-widget-title">Contact info</h3>
+
+          <div class="gl-footer-widget-content">
+            <ul>
+              <li><i class="fa fa-map-marker"></i>Road 3, West side lane Texas,  USA</li>
+              <li><i class="fa fa-phone"></i>0632 0152 001</li>
+              <li><i class="fa fa-envelope-o"></i>mail@gmail.com</li>
+              <li><i class="fa fa-globe"></i>www.glimpse.com</li>
+            </ul>
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- FOOTER WIDGET -->
+        <div class="gl-footer-widget gl-useful-links">
+          <h3 class="gl-footer-widget-title">Company</h3>
+
+          <div class="gl-footer-widget-content">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Career &amp; Goal</a></li>
+              <li><a href="#">Company Profile</a></li>
+              <li><a href="#">Process</a></li>
+              <li><a href="#">Account</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- FOOTER WIDGET -->
+        <div class="gl-footer-widget gl-subscribe-widget">
+          <h3 class="gl-footer-widget-title">Subscribe</h3>
+
+          <div class="gl-footer-widget-content">
+          <p>Checkout and enjoy the biggest eco</p>
+
+          <form action="#">
+            <input type="email" name="gl-subscription" id="gl-subscription" placeholder="Your email">
+            <button type="submit" class="gl-btn">Submit</button>
+          </form>
+          </div>
+        </div>
+        <!-- END -->
+      </div>
+    </div>
+  </div>
+  <!-- END -->
+
+  <!-- FOOTER BOTTOM -->
+  <div class="gl-footer-bottom-wrapper">
+    <div class="container">
+      <div class="row">
+        <!-- COPYRIGHT INFO -->
+        <div class="gl-copyright-info-wrapper">
+          <p>Copyright &copy; 2016 Glimpse. All rights reserved</p>
+        </div>
+        <!-- COPYRIGHT INFO -->
+
+        <div class="gl-social-info-wrapper">
+          <ul>
+            <li>
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <i class="fa fa-behance"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <i class="fa fa-dribbble"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <i class="fa fa-vimeo"></i>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END -->
+</footer>
+<!-- FOOTER END -->
+
+<script src="../js/jquery.min.js"></script>
+
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBF0FPDHlurGkDKua7PfZjpD2fr2rQsRw0&libraries=places"></script>
+<script src="js/google-autocomplete.js"></script>
+
+<script src="js/plugins.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/main.js"></script>
 
 {{ end }} 
