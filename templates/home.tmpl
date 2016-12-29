@@ -141,35 +141,66 @@
       <!-- WRAPPER -->
       <div class="gl-featured-listing-wrapper">
 
+       
+
+
         {{range .Popvenues}}
-        <!-- FEATURED ITEMS -->
-        <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
+
+             <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
           <div class="gl-feat-items-img-wrapper">
             <picture>
-                <source media="(min-width: 768px)" srcset=images/featured-listing-1.jpg>
-                <img alt="Category Image" srcset=images/featured-listing-1-xs.jpg>
+                <source media="(min-width: 768px)" srcset= {{ .CoverImage }} />
+                <img alt="Category Image" srcset= {{ .CoverImage }} />
             </picture>
 
-            <span class="gl-item-rating">
+            <span class="gl-price-tag"> <span class="gl-item-rating">
               <i class="fa fa-star"></i>
               4.5
-            </span>
+            </span></span>
           </div>
 
           <div class="gl-feat-item-details">
+            <span class="gl-item-status-label gl-sold-label">Sold</span>
+
             <h3>
               <a href="#">{{ .Name }}</a>
             </h3>
             <div class="gl-item-location">
               <i class="ion-ios-location-outline"></i>
-              <span>{{ .Address }}</span>
+               <span>{{ .Address }}</span>
             </div>
           </div>
+
+          <div class="gl-feat-item-metas">
+            <ul class="gl-feature-info">
+              <li>Beds<span>3</span>
+              </li>
+              <li>Baths<span>2</span>
+              </li>
+              <li>Area<span>900 sqft</span>
+              </li>
+            </ul>
+
+            <ul class="gl-wishlist-compare-wrapper">
+                <li>
+                    <a href="#" class="gl-add-wishlist">
+                        <i class="fa fa-heart-o"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="gl-add-compare">
+                        <div class="gl-compare-btn">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+          </div>
         </div>
-        <!-- END -->
-
-          {{ end }}
-
+   {{ end }}
       
       </div>
       <!-- END -->
