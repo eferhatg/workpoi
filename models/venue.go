@@ -19,10 +19,12 @@ type VenueRow struct {
 	HasOwnWifi    bool    `db:"has_own_wifi"`
 	HasWiSpotter  bool    `db:"has_wispotter"`
 	HasTtnetWifi  bool    `db:"has_ttnet_wifi"`
+	HasAlcohol    bool    `db:"has_alcohol"`
 	WifiRating    int     `db:"wifi_rating"`
 	WifiAvgSpeed  float64 `db:"wifi_avg_speed"`
 	PlugRating    int     `db:"plug_rating"`
 	NoiseRating   int     `db:"noise_rating"`
+	CoffeeRating  int     `db:"coffee_rating"`
 	SeatCapacity  int     `db:"seat_capacity"`
 	TableCapacity int     `db:"table_capacity"`
 	CoverImage    string  `db:"cover_image"`

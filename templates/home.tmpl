@@ -140,10 +140,6 @@
 
       <!-- WRAPPER -->
       <div class="gl-featured-listing-wrapper">
-
-       
-
-
         {{range .Popvenues}}
 
              <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
@@ -160,7 +156,7 @@
           </div>
 
           <div class="gl-feat-item-details">
-            <span class="gl-item-status-label gl-sold-label">Sold</span>
+            
 
             <h3>
               <a href="#">{{ .Name }}</a>
@@ -173,31 +169,15 @@
 
           <div class="gl-feat-item-metas">
             <ul class="gl-feature-info">
-              <li>Beds<span>3</span>
-              </li>
-              <li>Baths<span>2</span>
-              </li>
-              <li>Area<span>900 sqft</span>
-              </li>
+              <li><i class="fa fa-wifi" title="İnternet Hızı"></i><span> {{ .WifiAvgSpeed }} Mbps </span></li>
+              <li><i class="fa fa-plug" title="Priz Sıklığı"></i><span> {{ .PlugRating }}/10 </span></li>
+              <li><i class="fa fa-volume-up" title="Gürültü Seviyesi"></i><span> {{ .NoiseRating }}/10 </span></li>
+              <li><i class="fa fa-coffee" title="İçecek Lezzeti"></i><span> {{ .CoffeeRating }}/10 </span></li>
+              <li><i class="fa fa-glass" title="Alkol var mı?"></i> {{if .HasAlcohol }} Var {{else}} Yok {{end}}</li>
+            
             </ul>
 
-            <ul class="gl-wishlist-compare-wrapper">
-                <li>
-                    <a href="#" class="gl-add-wishlist">
-                        <i class="fa fa-heart-o"></i>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="gl-add-compare">
-                        <div class="gl-compare-btn">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+           
           </div>
         </div>
    {{ end }}
@@ -207,7 +187,7 @@
 
       <!-- MORE BTN -->
       <div class="gl-more-btn-wrapper">
-        <a href="#" class="gl-more-btn gl-btn">More</a>
+        <a href="#" class="gl-more-btn gl-btn">Devamı</a>
       </div>
       <!-- END -->
     </div>
@@ -248,4 +228,3 @@
    
 </body>
 </html>
-
