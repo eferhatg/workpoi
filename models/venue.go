@@ -25,6 +25,7 @@ type VenueRow struct {
 	PlugRating    int     `db:"plug_rating"`
 	NoiseRating   int     `db:"noise_rating"`
 	CoffeeRating  int     `db:"coffee_rating"`
+	OverallRating float64 `db:"overall_rating"`
 	SeatCapacity  int     `db:"seat_capacity"`
 	TableCapacity int     `db:"table_capacity"`
 	CoverImage    string  `db:"cover_image"`
