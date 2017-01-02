@@ -18,6 +18,24 @@ type searchargs struct {
 
 func GetSearch(c *gin.Context) {
 
+db := c.MustGet("db").(*sqlx.DB)
+	cnf := c.MustGet("config").(*viper.Viper)
 
+	v := models.NewVenue(db)
+	vr, err := v.Select(40, 40)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	r:= models.NewRegion(db)
+	rr,err:=r.Select(8,1)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	
+	s := homeargs{Popregions: rr, Popvenues: vr, ImgRoot:cnf.GetString("image.root") }
+
+	c.HTML(http.StatusOK, "search.tmpl", s)
 
 }
