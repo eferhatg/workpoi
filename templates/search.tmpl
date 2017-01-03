@@ -255,24 +255,44 @@
           <!-- END -->
 
           <!-- FEATURED ITEMS -->
-          <div class="gl-featured-items col-md-6 col-sm-12 col-xs-12 appear fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
-            <div class="gl-feat-items-img-wrapper">
-              <picture>
-                <source media="(min-width: 768px)" srcset=images/listing-img-3-xs.jpg>
-                <img alt="Category Image" srcset=images/listing-img-3-xs.jpg>
+                      <div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
+          <div class="gl-feat-items-img-wrapper">
+            <picture>
+                <source media="(min-width: 768px)" srcset= {{ .CoverImage }} />
+                <img alt="Category Image" srcset= {{ .CoverImage }} />
             </picture>
-            </div>
 
-            <div class="gl-feat-item-details">
-              <h3>
-                <a href="#">Office Rent</a>
-              </h3>
-              <div class="gl-item-location">
-                <i class="ion-ios-location-outline"></i>
-                <span>Road 3, West Portland, USA</span>
-              </div>
+            <span class="gl-price-tag"> <span class="gl-item-rating">
+              <i class="fa fa-star"></i>
+               {{ .OverallRating }}
+            </span></span>
+          </div>
+
+          <div class="gl-feat-item-details">
+            
+
+            <h3>
+              <a href="#">{{ .Name }}</a>
+            </h3>
+            <div class="gl-item-location">
+              <i class="ion-ios-location-outline"></i>
+               <span>{{ .Address }}</span>
             </div>
           </div>
+
+          <div class="gl-feat-item-metas">
+            <ul class="gl-feature-info">
+              <li><i class="fa fa-wifi" title="İnternet Hızı"></i><span> {{ .WifiAvgSpeed }} Mbps </span></li>
+              <li><i class="fa fa-plug" title="Priz Sıklığı"></i><span> {{ .PlugRating }}/10 </span></li>
+              <li><i class="fa fa-volume-up" title="Gürültü Seviyesi"></i><span> {{ .NoiseRating }}/10 </span></li>
+              <li><i class="fa fa-coffee" title="İçecek Lezzeti"></i><span> {{ .CoffeeRating }}/10 </span></li>
+              <li><i class="fa fa-glass" title="Alkol var mı?"></i> {{if .HasAlcohol }} Var {{else}} Yok {{end}}</li>
+            
+            </ul>
+
+           
+          </div>
+        </div>
           <!-- END -->
 
           <!-- FEATURED ITEMS -->
