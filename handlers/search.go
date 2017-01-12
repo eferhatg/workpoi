@@ -1,16 +1,16 @@
 package handlers
 
 import (
-	log "github.com/Sirupsen/logrus"
-	"github.com/eferhatg/workpoi/models"
+	 log "github.com/Sirupsen/logrus"
+	 "github.com/eferhatg/workpoi/models"
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
-	"github.com/jmoiron/sqlx"
+	 "github.com/spf13/viper"
+	 "github.com/jmoiron/sqlx"
 	"net/http"
 )
 
 type searchargs struct {
-    Popregions []models.RegionRow
+   // Popregions []models.RegionRow
     Popvenues []models.VenueRow
     ImgRoot string
 }
@@ -18,7 +18,7 @@ type searchargs struct {
 
 func GetSearch(c *gin.Context) {
 
-db := c.MustGet("db").(*sqlx.DB)
+	db := c.MustGet("db").(*sqlx.DB)
 	cnf := c.MustGet("config").(*viper.Viper)
 
 	v := models.NewVenue(db)
